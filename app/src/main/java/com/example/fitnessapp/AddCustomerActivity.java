@@ -30,7 +30,10 @@ public class AddCustomerActivity extends AppCompatActivity {
     private TextView status;
     private EditText name;
     private EditText surname;
-    private EditText date;
+    private EditText gmail;
+    private EditText phone;
+    private EditText address;
+    private EditText PlanID;
 
     private RequestQueue requestQueue;
     private String url = "https://fitnes3-endscddjhtd0cwcs.italynorth-01.azurewebsites.net/api/v1/customer";
@@ -43,8 +46,11 @@ public class AddCustomerActivity extends AppCompatActivity {
 
         name = (EditText) findViewById(R.id.teName);
         surname = (EditText) findViewById(R.id.teSurname);
-        date = (EditText) findViewById(R.id.teDate);
+        gmail = (EditText) findViewById(R.id.teGmail);
+        phone = (EditText) findViewById(R.id.tePhone);
         status = (TextView) findViewById(R.id.status);
+        address = (EditText) findViewById(R.id.teAddress);
+        PlanID = (EditText) findViewById(R.id.tePlanID);
         requestQueue = Volley.newRequestQueue(getApplicationContext());
 
     }
@@ -55,7 +61,10 @@ public class AddCustomerActivity extends AppCompatActivity {
             JSONObject jsonBody = new JSONObject();
             jsonBody.put("firstName", name.getText());
             jsonBody.put("lastName", surname.getText());
-            jsonBody.put("gmail", date.getText());
+            jsonBody.put("gmail", gmail.getText());
+            jsonBody.put("phoneNumber", phone.getText());
+            jsonBody.put("address", address.getText());
+            jsonBody.put("planID", PlanID.getText());
 
             final String mRequestBody = jsonBody.toString();
 
