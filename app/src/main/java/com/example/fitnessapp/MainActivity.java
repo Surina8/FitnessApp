@@ -82,5 +82,13 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    public static final String EXTRA_MESSAGE = "com.example.FitnessApp.MESSAGE";
+
+    public void addStudentActivity (View view) {
+        Intent intent = new Intent(this, AddCustomerActivity.class);
+        String message = "Dodaj kupca v seznam.";
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+    }
 
 }
